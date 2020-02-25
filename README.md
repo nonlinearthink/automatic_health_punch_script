@@ -5,7 +5,7 @@
 ```
 pip install selenium
 ```
-#### 下载chromedriver（https://npm.taobao.org/mirrors/chromedriver/）驱动
+#### 下载chromedriver（https://npm.taobao.org/mirrors/chromedriver）驱动
 
 找到符合自己浏览器版本的chromedriver驱动，下载解压后，将chromedriver.exe文件放到Python目录下的Scripts目录下，也可以添加环境变量到Path中；
 
