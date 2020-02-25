@@ -80,4 +80,29 @@ except Exception as e:
 
 driver.quit#退出驱动
 ```
+#### 添加Windows定时任务
+1. 我的电脑>右键管理>(左侧栏)任务计划程序>Microsoft>Windows>(右侧栏)创建任务(详见百度)
 
+2. 设置任务:
+
+命名任务
+![输入图片说明](https://images.gitee.com/uploads/images/2020/0225/135138_58c31adf_4859314.png "屏幕截图.png")
+设置触发器
+![输入图片说明](https://images.gitee.com/uploads/images/2020/0225/135154_efdceb40_4859314.png "屏幕截图.png")
+设置操作
+![输入图片说明](https://images.gitee.com/uploads/images/2020/0225/135207_c6a241c3_4859314.png "屏幕截图.png")
+
+注意：该方法的前提是py后缀的脚本文件默认打开方式是python，可以先尝试一下，本人就是默认python打开，如果不行可以用下面方法设置默认打开方式：
+
+1.win+R打开运行；
+
+2.输入regedit，确定；
+
+3.在打开的注册表中找到以下目录：
+
+HKEY_CLASSES-ROOT->Python.file->shell->open->command
+
+4.将该项的内容修改为：
+
+“D:\Python\Python3.6.1\pythonw.exe” “D:\Python\Python3.6.1\Lib\idlelib\idle.pyw” -e “%1”
+（将其中的路径修改为自己python的安装路径即可）
