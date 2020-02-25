@@ -1,39 +1,83 @@
-# 自动健康打卡脚本
+# 自动健康打卡脚本-使用说明
 
-#### 介绍
-{**以下是码云平台说明，您可以替换此简介**
-码云是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用码云实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+#### 安装selenium包
 
-#### 软件架构
-软件架构说明
+```
+pip install selenium
+```
+#### 下载chromedriver（https://npm.taobao.org/mirrors/chromedriver/）驱动
 
+找到符合自己浏览器版本的chromedriver驱动，下载解压后，将chromedriver.exe文件放到Python目录下的Scripts目录下，也可以添加环境变量到Path中；
 
-#### 安装教程
+#### Selenium脚本源码
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+```
+# -*- coding: utf-8 -*-
+import time
+import traceback
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+  
+myusername = "xxxxxxxx"#登录账号,学号
+mypassword = "xxxxxx"#登录密码,身份证后6位
+localtion = "xxx xxx xxx"#所在地区，例："广东省 汕头市 潮南区"
+  
+driver = webdriver.Chrome() #模拟浏览器打开网站
+driver.get("http://ca.zucc.edu.cn/cas/login?service=http%3A%2F%2Fyqdj.zucc.edu.cn%2Ffeiyan_api%2Fh5%2Fhtml%2Fdaka%2Fdaka.html")
+#driver.maximize_window() #将窗口最大化
 
 
-#### 码云特技
+try:
+ #找到登录框，输入账号密码
+ driver.find_element_by_xpath('//*[@id="username"]').send_keys(myusername)
+ driver.find_element_by_xpath('//*[@id="password"]').send_keys(mypassword)
+ time.sleep(2)  
+  
+ #模拟点击登录
+ driver.find_element_by_xpath('//*[@id="main"]/div/div/div[5]/div/input[1]').click()
+ time.sleep(2)
+except:
+  print("签到失败")
+print("*")
+windows = driver.window_handles
+driver.switch_to.window(windows[-1])
+print("**") 
+try:
+ #输入地区
+ pag=driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[2]/div[2]/div/div/input')
+ driver.execute_script("arguments[0].removeAttribute('readonly')",pag)
+ driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[2]/div[2]/div/div/input').send_keys(localtion)
+ time.sleep(2)
+ driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[3]/div[2]/div/div/li[2]/label/div[2]/div').click()
+ time.sleep(2)
+ driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[4]/div[2]/div/div/li[2]/label/div[2]/div').click()
+ time.sleep(2)
+ driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[5]/div[2]/div/div/li[2]/label/div[2]/div').click()
+ time.sleep(2)
+ driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[6]/div[2]/div/div/li[2]/label/div[2]/div').click()
+ time.sleep(2)
+ driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[8]/div[2]/div/div/li[2]/label/div[2]/div').click()
+ time.sleep(2)
+ driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[10]/div[2]/div/div/li[2]/label/div[2]/div').click()
+ time.sleep(2)
+ driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[11]/div[2]/div/div/li[2]/label/div[2]/div').click()
+ time.sleep(2)
+ driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[12]/div[2]/div/div/li[2]/label/div[2]/div').click()
+ time.sleep(2)
+ driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[13]/div[2]/div/div/li[2]/label/div[2]/div').click()
+ time.sleep(2)
+ driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[14]/div[2]/div/div/li[2]/label/div[2]/div').click()
+ time.sleep(2)
+ driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[15]/div[2]/div/div/li[1]/label/div[2]/div').click()
+ time.sleep(2)
+ #模拟点击签到
+ driver.find_element_by_partial_link_text('提交').click()
+ time.sleep(2)
+ print("签到成功")
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+except Exception as e:
+    traceback.print_exc()
+
+driver.quit#退出驱动
+```
+
