@@ -6,7 +6,7 @@ from selenium.webdriver.common.keys import Keys
   
 myusername = "xxxxxxxx"#登录账号
 mypassword = "xxxxxx"#登录密码
-localtion = "浙江省 宁波市 余姚市"#所在地区
+localtion = "xxx xxx xxx"#所在地区，例："广东省 汕头市 潮南区"
   
 driver = webdriver.Chrome() #模拟浏览器打开网站
 driver.get("http://ca.zucc.edu.cn/cas/login?service=http%3A%2F%2Fyqdj.zucc.edu.cn%2Ffeiyan_api%2Fh5%2Fhtml%2Fdaka%2Fdaka.html")
