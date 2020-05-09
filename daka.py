@@ -6,7 +6,8 @@ from selenium.webdriver.common.keys import Keys
   
 myusername = "xxxxxxxx"#登录账号
 mypassword = "xxxxxx"#登录密码
-localtion = "xxx xxx xxx"#所在地区，例："广东省 汕头市 潮南区"
+localtion = "浙江省 杭州市 西湖区"#所在地区
+# localtion = "校内 校内 校内"#所在地区
   
 #driver.maximize_window() #将窗口最大化
 
@@ -53,12 +54,14 @@ while flag == 1 :
     time.sleep(2)
     driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[16]/div[2]/div/div/li[2]/label/div[2]/div').click()
     time.sleep(2)
+    driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[17]/div[2]/div/div/li[9]/label/div[2]/div').click()
+    time.sleep(2)
     #模拟点击签到
     driver.find_element_by_partial_link_text('提交').click()
     time.sleep(2)
     print("签到成功")
     flag = 0
-    driver.quit()
+    # driver.quit()
   except Exception as e:
     driver.quit()
     print("签到失败")
