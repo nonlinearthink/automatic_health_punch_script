@@ -13,6 +13,7 @@ pip install selenium
 
 ```
 # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 import time
 import traceback
 from selenium import webdriver
@@ -20,7 +21,8 @@ from selenium.webdriver.common.keys import Keys
   
 myusername = "xxxxxxxx"#登录账号
 mypassword = "xxxxxx"#登录密码
-localtion = "xxx xxx xxx"#所在地区，例："广东省 汕头市 潮南区"
+localtion = "浙江省 杭州市 西湖区"#所在地区
+# localtion = "校内 校内 校内"#所在地区
   
 #driver.maximize_window() #将窗口最大化
 
@@ -67,16 +69,19 @@ while flag == 1 :
     time.sleep(2)
     driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[16]/div[2]/div/div/li[2]/label/div[2]/div').click()
     time.sleep(2)
+    driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[17]/div[2]/div/div/li[9]/label/div[2]/div').click()
+    time.sleep(2)
     #模拟点击签到
     driver.find_element_by_partial_link_text('提交').click()
     time.sleep(2)
     print("签到成功")
     flag = 0
-    driver.quit()
+    # driver.quit()
   except Exception as e:
     driver.quit()
     print("签到失败")
     traceback.print_exc()
+
 ```
 #### 添加Windows定时任务
 1. 我的电脑>右键管理>(左侧栏)任务计划程序>Microsoft>Windows>(右侧栏)创建任务(详见百度)
