@@ -69,7 +69,7 @@ while flag == 1 :
     time.sleep(2)
     driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[16]/div[2]/div/div/li[2]/label/div[2]/div').click()
     time.sleep(2)
-    driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[17]/div[2]/div/div/li[9]/label/div[2]/div').click()
+    driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[17]/div[2]/div/div/li[10]/label/div[2]/div').click()
     time.sleep(2)
     #模拟点击签到
     driver.find_element_by_partial_link_text('提交').click()
