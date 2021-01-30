@@ -1,15 +1,24 @@
 # 自动健康打卡脚本-使用说明
 
-#### 安装selenium包
+## 安装依赖
+
+### 安装Python依赖
 
 ```
-pip install selenium
+pip install -r requirements.txt
 ```
-#### 下载chromedriver驱动  https://npm.taobao.org/mirrors/chromedriver
 
-找到符合自己浏览器版本的chromedriver驱动，下载解压后，将chromedriver.exe文件放到Python目录下的Scripts目录下，也可以添加环境变量到Path中；
+### 下载 chromedriver
 
-#### Selenium脚本源码
+可以通过 chrome://version 查看chrome版本。chromedriver 的版本必须与你的 chorme 版本一致。
+
+chromedriver 下载地址: [https://npm.taobao.org/mirrors/chromedriver](https://npm.taobao.org/mirrors/chromedriver)
+
+下载解压后，将可执行文件 chromedriver 放到Python目录下的Scripts目录下，也可以添加环境变量到Path中。
+
+> 推荐使用虚拟环境，然后把可执行文件放到 `venv/bin` 目录下。
+
+## Selenium脚本源码
 
 ```
 # -*- coding: utf-8 -*-
@@ -83,7 +92,7 @@ while flag == 1 :
     traceback.print_exc()
 
 ```
-#### 添加Windows定时任务
+## 添加Windows定时任务
 1. 我的电脑>右键管理>(左侧栏)任务计划程序>Microsoft>Windows>(右侧栏)创建任务(详见百度)
 
 2. 设置任务:
