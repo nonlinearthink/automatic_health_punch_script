@@ -3,11 +3,11 @@ import time
 import traceback
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+# import yaml
 
-myusername = ""  #登录账号
-mypassword = ""  #登录密码
+myusername = "xxxxxxxx"  #登录账号
+mypassword = "xxxxxx"  #登录密码
 localtion = "浙江省 杭州市 西湖区"  #所在地区
-localtions = localtion.split(' ')
 
 #driver.maximize_window() #将窗口最大化
 
@@ -30,15 +30,11 @@ while 1:
         windows = driver.window_handles
         driver.switch_to.window(windows[-1])
         #输入地区
-        # pag=driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[3]/div[2]/div/div/input')
-        # driver.execute_script("arguments[0].removeAttribute('readonly')",pag)
+        pag=driver.find_element_by_xpath('//*[@id="question-form"]/ul/li[3]/div[2]/div/div/input')
+        driver.execute_script("arguments[0].removeAttribute('readonly')",pag)
         driver.find_element_by_xpath(
-            '//*[@id="question-form"]/ul/li[3]/div[2]/div/div/input').click()
-        for i in range(0, len(localtions)):
-            driver.find_element_by_xpath(
-                '//*[@class="picker-items-col-wrapper"]/div[text()="{}"]'.
-                format(localtions[i])).click()
-            time.sleep(1)
+            '//*[@id="question-form"]/ul/li[3]/div[2]/div/div/input'
+        ).send_keys(localtion)
         time.sleep(2)
         driver.find_element_by_xpath(
             '//*[@id="question-form"]/ul/li[4]/div[2]/div/div/li[2]/label/div[2]/div'
