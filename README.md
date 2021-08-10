@@ -16,7 +16,7 @@
 ### 手动安装
 #### 安装依赖
 
-> 推荐使用 virtualenv 或者 conda 独立建环境，当然默认的全局安装也行。
+> 推荐使用 virtualenv 或者 conda 独立建环境，但是别忘了激活环境，当然默认的全局安装也行。
 
 ```sh
 pip install -r requirements.txt
@@ -25,7 +25,7 @@ pip install -r requirements.txt
 
 #### 下载 chromedriver
 
-可以通过 chrome://version 查看chrome版本。chromedriver 的版本必须与你的 chorme 版本一致。
+可以通过 chrome://version 查看chrome版本。chromedriver 的版本必须与你的 chorme 版本一致，小版本号应该没影响。
 
 chromedriver 下载地址: [https://npm.taobao.org/mirrors/chromedriver](https://npm.taobao.org/mirrors/chromedriver)
 

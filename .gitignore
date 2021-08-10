@@ -280,6 +280,7 @@ dmypy.json
 # !.vscode/launch.json
 # !.vscode/extensions.json
 *.code-workspace
+!.vscode/settings.json
 
 ### Config file ###
 *.yml
