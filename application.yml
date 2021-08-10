@@ -1,0 +1,26 @@
+username: xxx
+password: xxx
+rules:
+  default:
+    location: 浙江省 杭州市 余杭区
+  custom:
+    week:
+      # monday:
+        # location: 浙江省 杭州市 拱墅区
+      # tuesday:
+        # location: 浙江省 杭州市 拱墅区
+      # wednesday:
+        # location: 浙江省 杭州市 拱墅区
+      # thursday:
+        # location: 浙江省 杭州市 拱墅区
+      # friday:
+        # location: 浙江省 杭州市 拱墅区
+      # saturday:
+        # location: 浙江省 杭州市 拱墅区
+      # sunday:
+        # location: 浙江省 杭州市 拱墅区
+    month:
+      # 1:
+        # location: 浙江省 杭州市 萧山区
+      # 31:
+        # location: 浙江省 杭州市 萧山区
