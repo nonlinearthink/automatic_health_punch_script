@@ -23,7 +23,11 @@ def daka():
             config_today = config["rules"]["custom"]["month"][dayOfMonth]
     print("生成每日的配置: ", config_today)
     # 开始执行脚本
-    driver = webdriver.Chrome()
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--disable-gpu')
+    driver = webdriver.Chrome(chrome_options=chrome_options)
     driver.get(
         "http://ca.zucc.edu.cn/cas/login?service=http%3A%2F%2Fyqdj.zucc.edu.cn%2Ffeiyan_api%2Fh5%2Fhtml%2Fdaka%2Fdaka.html"
     )

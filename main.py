@@ -5,7 +5,7 @@ from job import daka
 
 
 def main():
-    schedule.every().day.at("12:00").seconds.do(daka)
+    schedule.every().day.at("10:00").do(daka)
     while True:
         schedule.run_pending()
 

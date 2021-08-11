@@ -7,11 +7,13 @@
 |版本号|仓库|
 |-|-|
 |v1.0|[jonesnow/automatic_health_punch_script](https://gitee.com/jonesnow/automatic_health_punch_script)|
-|v2.0|[nonlinearthink/automatic_health_punch_script](https://gitee.com/nonlinearthink/automatic_health_punch_script)|
+|v2.0|[nonlinearthink/automatic_health_punch_script](https://github.com/nonlinearthink/automatic_health_punch_script)|
 
 ## 使用说明
 
 目前提供两种方式，第一种是手动安装的方式，第二种是Docker安装。
+
+在安装开始之前，请先编辑 `application.yml` 文件，根据自己的情况更改配置。
 
 ### 手动安装
 #### 安装依赖
@@ -38,7 +40,7 @@ chromedriver 下载地址: [https://npm.taobao.org/mirrors/chromedriver](https:/
 ##### Linux & MacOS
 
 ```sh
-nohup python3 test.py > daka.log 2>&1 &
+nohup python3 main.py > daka.log 2>&1 &
 # 可使用 ps -ef | grep python3 查询 pid 后删除
 ```
 
@@ -52,3 +54,17 @@ pythonw test.py > daka.log
 ### Docker自动安装
 
 Docker 为推荐安装方式，因为它更好管理和维护，且操作更简单。
+
+#### 制作 Docker 镜像
+
+```
+docker build -t nonlinearthink/automatic-health-punch-script:v2 .
+```
+
+这一步可能需要科学上网，不然安装chrome的时候获取谷歌的验证服务可能会失败。
+
+#### 运行容器
+
+```
+docker run -ti -d nonlinearthink/automatic-health-punch-script:v2
+```

@@ -15,10 +15,10 @@ rules:
         # location: 浙江省 杭州市 拱墅区
       # friday:
         # location: 浙江省 杭州市 拱墅区
-      # saturday:
-        # location: 浙江省 杭州市 拱墅区
-      # sunday:
-        # location: 浙江省 杭州市 拱墅区
+      saturday:
+        location: 校内 校内 校内
+      sunday:
+        location: 校内 校内 校内
     month:
       # 1:
         # location: 浙江省 杭州市 萧山区
