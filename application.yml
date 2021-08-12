@@ -1,9 +1,17 @@
+# 学号
 username: xxx
+# 密码
 password: xxx
+# 每日打卡时间，格式 HH:mm
+schedule: 08:00
+# 打卡规则
 rules:
+  # 默认规则
   default:
     location: 浙江省 杭州市 余杭区
+  # 定制规则，日期定制会覆盖星期定制
   custom:
+    # 按星期定制
     week:
       # monday:
         # location: 浙江省 杭州市 拱墅区
@@ -19,6 +27,7 @@ rules:
         location: 校内 校内 校内
       sunday:
         location: 校内 校内 校内
+    # 按日期制定
     month:
       # 1:
         # location: 浙江省 杭州市 萧山区

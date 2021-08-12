@@ -16,10 +16,9 @@ def daka():
             "monday", "tuesday", "wednesday", "thursday", "friday", "saturday",
             "sunday"
         ]
-        if config["rules"]["custom"]["week"] != None:
-            config_today = config["rules"]["custom"]["week"][
-                weekday[dayOfWeek]]
-        if config["rules"]["custom"]["month"] != None:
+        if config["rules"]["custom"]["week"] != None and weekday[dayOfWeek] in config["rules"]["custom"]["week"]:
+            config_today = config["rules"]["custom"]["week"][weekday[dayOfWeek]]
+        if config["rules"]["custom"]["month"] != None and dayOfMonth in config["rules"]["custom"]["month"]:
             config_today = config["rules"]["custom"]["month"][dayOfMonth]
     print("生成每日的配置: ", config_today)
     # 开始执行脚本
@@ -42,6 +41,7 @@ def daka():
         driver.find_element_by_xpath(
             '//*[@id="main"]/div/div/div[5]/div/input[1]').click()
         time.sleep(2)
+        print("登录成功")
         windows = driver.window_handles
         driver.switch_to.window(windows[-1])
         #输入地区

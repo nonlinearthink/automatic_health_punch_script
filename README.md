@@ -66,5 +66,7 @@ docker build -t nonlinearthink/automatic-health-punch-script:v2 .
 #### 运行容器
 
 ```
-docker run -ti -d nonlinearthink/automatic-health-punch-script:v2
+docker run --name automatic-health-punch-script -e TZ=Asia/Shanghai -ti -d nonlinearthink/automatic-health-punch-script:v2
 ```
+
+> 注意设置时区，不然设定的时间会相差8个小时
