@@ -38,8 +38,10 @@
     进入上一步创建的目录，运行：
 
     ```sh
-    wget https://github.com/nonlinearthink/ automatic_health_punch_script/blob/master/application.yml
+    wget https://raw.githubusercontent.com/nonlinearthink/automatic_health_punch_script/master/application.yml
     ```
+
+    然后根据自己的情况，对 application.yml 做适当的修改，每一个配置项都写了注释，详细见 application.yml 。
 
 4. 创建容器
 
