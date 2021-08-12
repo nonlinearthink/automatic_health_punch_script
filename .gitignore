@@ -285,5 +285,6 @@ dmypy.json
 ### Config file ###
 *.yml
 !application.yml
+*.tar
 
 # End of https://www.toptal.com/developers/gitignore/api/python,pycharm,vscode

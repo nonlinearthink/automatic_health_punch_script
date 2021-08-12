@@ -1,14 +1,10 @@
-class Configuration:
-    instance: dict = None
+import yaml
 
-    @classmethod
-    def createConfig(self, config_info):
-        if Configuration.instance == None:
-            print("加载配置: ", config_info)
-            Configuration.instance = config_info
-        else:
-            print("请重新运行程序")
+class Configuration:
 
     @classmethod
     def getConfig(self):
-        return Configuration.instance
+        with open('application.yml', 'r', encoding='utf-8') as f:
+            config = yaml.load(f.read(), Loader=yaml.Loader)
+            print("加载配置", config)
+            return config

@@ -14,11 +14,10 @@ RUN unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
 # set display port to avoid crash
 ENV DISPLAY=:99
 
-# install python requirements
-ADD requirements.txt /requirements.txt
-RUN pip3 install -r /requirements.txt
-
 # copy code
 ADD . /
+
+# install python requirements
+RUN pip3 install -r /requirements.txt
 
 CMD ["/usr/local/bin/python3","/main.py"]
