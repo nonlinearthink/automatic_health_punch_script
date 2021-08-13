@@ -23,14 +23,17 @@
     docker pull nonlinearthink/automatic-health-punch-script:2.3
     ```
 
-    如果下载的镜像出现了问题，可以自己制作，脚本已经见 `dockerfile`。只需要在当前项目的根目录执行：
+    如果下载的镜像出现了问题，可以自己制作：
 
     ```sh
+    # 下载源代码仓库
+    https://github.com/nonlinearthink/automatic_health_punch_script
+
+    # 打包镜像
     docker build -t nonlinearthink/automatic-health-punch-script:2.3 .
     ```
 
     > 自制脚本可能需要科学上网，不然安装chrome的时候获取谷歌的验证服务可能会失败。
-
 
 2. 创建一个目录
 3. 获取 application.yml
@@ -72,7 +75,7 @@
 
     可以通过 chrome://version 查看chrome版本。chromedriver 的版本必须与你的 chorme 版本一致，小版本号应该没影响。
 
-    >chromedriver 下载地址: [https://npm.taobao.org/mirrors/chromedriver](https://npm.taobao.org/mirrors/chromedriver)
+    > chromedriver 下载地址: [https://npm.taobao.org/mirrors/chromedriver](https://npm.taobao.org/mirrors/chromedriver)
 
     下载解压后，将可执行文件 chromedriver 放到 Python 目录下的 Scripts 目录下，也可以添加环境变量到 Path 中。
 

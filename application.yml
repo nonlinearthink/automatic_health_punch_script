@@ -2,7 +2,7 @@
 username: xxx
 # 密码
 password: xxx
-# 每日打卡时间，格式 HH:mm
+# 每日打卡时间，格式 HH:mm，更改之后重新运行容器
 schedule: 08:00
 # 打卡规则
 rules:
