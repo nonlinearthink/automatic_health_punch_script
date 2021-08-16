@@ -60,6 +60,26 @@
     docker run --name automatic-health-punch-script -e TZ=Asia/Shanghai -v %cd%\application.yml:/application.yml -ti -d nonlinearthink/automatic-health-punch-script:2.3
     ```
 
+5. 动态修改配置
+   
+   之后你只需要找到 第3步 创建的 application.yml 文件，修改里面的内容就可以了。
+   
+   因为我们在 第4步 的命令里面已经把这个配置文件挂载到了容器内部，所以你可以在外面修改配置，而不需要进入容器内部。
+
+   另外，如果你修改了运行时间，必须重新启动容器。
+
+   ```sh
+   # 查看所有的容器
+   docker ps -a
+
+   # 输出
+   # CONTAINER ID   IMAGE                                              COMMAND                  CREATED        STATUS        PORTS                               NAMES
+   # c81ae3f777ac   nonlinearthink/automatic-health-punch-script:2.3   "/usr/local/bin/pyth…"   3 days ago     Up 3 days                                         automatic-health-punch-script
+
+   # 重启镜像
+   docker restart c81ae3f777ac
+   ```
+
 ### 源代码运行
 
 1. 安装依赖
