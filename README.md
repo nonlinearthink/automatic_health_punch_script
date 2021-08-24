@@ -4,6 +4,8 @@
 
 ## 历史版本
 
+这个项目最早是我在 gitee 上偶然发现的一个项目，对他进行了一定程度上的魔改，也非常感谢原仓库作者。
+
 |版本号|仓库|
 |-|-|
 |v1.0|[jonesnow/automatic_health_punch_script](https://gitee.com/jonesnow/automatic_health_punch_script)|
@@ -27,7 +29,7 @@
 
     ```sh
     # 下载源代码仓库
-    https://github.com/nonlinearthink/automatic_health_punch_script
+    git clone https://github.com/nonlinearthink/automatic_health_punch_script
 
     # 打包镜像
     docker build -t nonlinearthink/automatic-health-punch-script:2.5 .
@@ -45,6 +47,8 @@
     ```
 
     然后根据自己的情况，对 application.yml 做适当的修改，每一个配置项都写了注释，详细见 application.yml 。
+
+    >`raw.githubusercontent.com` 这个地址并没有被墙，但因为很多电脑的默认DNS服务器都不会存域名，所以你可能访问不了，请 '修改hosts文件' 或者 '更换DNS服务器'。
 
 4. 创建容器
 
