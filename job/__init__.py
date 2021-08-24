@@ -7,7 +7,7 @@ import traceback
 
 def daka():
     # 获取当天的配置
-    config = Configuration.getConfig()
+    config = Configuration.config
     dayOfWeek = datetime.today().weekday()
     dayOfMonth = date.today().day
     config_today = config["rules"]["default"]
@@ -16,9 +16,12 @@ def daka():
             "monday", "tuesday", "wednesday", "thursday", "friday", "saturday",
             "sunday"
         ]
-        if config["rules"]["custom"]["week"] != None and weekday[dayOfWeek] in config["rules"]["custom"]["week"]:
-            config_today = config["rules"]["custom"]["week"][weekday[dayOfWeek]]
-        if config["rules"]["custom"]["month"] != None and dayOfMonth in config["rules"]["custom"]["month"]:
+        if config["rules"]["custom"]["week"] != None and weekday[
+                dayOfWeek] in config["rules"]["custom"]["week"]:
+            config_today = config["rules"]["custom"]["week"][
+                weekday[dayOfWeek]]
+        if config["rules"]["custom"]["month"] != None and dayOfMonth in config[
+                "rules"]["custom"]["month"]:
             config_today = config["rules"]["custom"]["month"][dayOfMonth]
     print("生成每日的配置: ", config_today)
     # 开始执行脚本
