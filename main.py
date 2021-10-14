@@ -6,22 +6,18 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 
-# 新功能调试函数
-# def license_username():
-#     print(Configuration.config['username'])
-
-
-def restart():
+def init():
+    # 读取配置
     Configuration.readConfig()
+    # 清理日程表
     schedule.clear()
-    # 新功能调试代码
-    # schedule.every(1).seconds.do(license_username)
+    # 设置日程表
     schedule.every().day.at(Configuration.config["schedule"]).do(daka)
 
 
 class FileHandler(FileSystemEventHandler):
     def on_modified(self, event):
-        restart()
+        init()
 
 
 def main():
@@ -30,8 +26,9 @@ def main():
     file_handler = FileHandler()
     observer.schedule(file_handler, 'application.yml', recursive=True)
     observer.start()
+    # 初始化
+    init()
     # 主循环
-    restart()
     while True:
         schedule.run_pending()
 
