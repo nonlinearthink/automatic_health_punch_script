@@ -54,55 +54,55 @@ def daka():
             '//*[@class="list-block cards-list question-box"]/ul/li[3]/div[2]/div/div/input')
         driver.execute_script("arguments[0].removeAttribute('readonly')", pag)
         driver.find_element_by_xpath(
-            '//*[@id="question-form"]/ul/li[3]/div[2]/div/div/input'
+            '//*[@class="list-block cards-list question-box"]/ul/li[3]/div[2]/div/div/input'
         ).send_keys(config_today["location"])
         time.sleep(2)
         driver.find_element_by_xpath(
-            '//*[@id="question-form"]/ul/li[4]/div[2]/div/div/li[2]/label/div[2]/div'
+            '//*[@class="list-block cards-list question-box"]/ul/li[4]/div[2]/div/div/li[2]/label/div[2]/div'
         ).click()
         time.sleep(2)
         driver.find_element_by_xpath(
-            '//*[@id="question-form"]/ul/li[5]/div[2]/div/div/li[2]/label/div[2]/div'
+            '//*[@class="list-block cards-list question-box"]/ul/li[5]/div[2]/div/div/li[2]/label/div[2]/div'
         ).click()
         time.sleep(2)
         driver.find_element_by_xpath(
-            '//*[@id="question-form"]/ul/li[6]/div[2]/div/div/li[2]/label/div[2]/div'
+            '//*[@class="list-block cards-list question-box"]/ul/li[6]/div[2]/div/div/li[2]/label/div[2]/div'
         ).click()
         time.sleep(2)
         driver.find_element_by_xpath(
-            '//*[@id="question-form"]/ul/li[7]/div[2]/div/div/li[2]/label/div[2]/div'
+            '//*[@class="list-block cards-list question-box"]/ul/li[7]/div[2]/div/div/li[2]/label/div[2]/div'
         ).click()
         time.sleep(2)
         driver.find_element_by_xpath(
-            '//*[@id="question-form"]/ul/li[9]/div[2]/div/div/li[2]/label/div[2]/div'
+            '//*[@class="list-block cards-list question-box"]/ul/li[9]/div[2]/div/div/li[2]/label/div[2]/div'
         ).click()
         time.sleep(2)
         driver.find_element_by_xpath(
-            '//*[@id="question-form"]/ul/li[11]/div[2]/div/div/li[2]/label/div[2]/div'
+            '//*[@class="list-block cards-list question-box"]/ul/li[11]/div[2]/div/div/li[2]/label/div[2]/div'
         ).click()
         time.sleep(2)
         driver.find_element_by_xpath(
-            '//*[@id="question-form"]/ul/li[12]/div[2]/div/div/li[2]/label/div[2]/div'
+            '//*[@class="list-block cards-list question-box"]/ul/li[12]/div[2]/div/div/li[2]/label/div[2]/div'
         ).click()
         time.sleep(2)
         driver.find_element_by_xpath(
-            '//*[@id="question-form"]/ul/li[13]/div[2]/div/div/li[2]/label/div[2]/div'
+            '//*[@class="list-block cards-list question-box"]/ul/li[13]/div[2]/div/div/li[2]/label/div[2]/div'
         ).click()
         time.sleep(2)
         driver.find_element_by_xpath(
-            '//*[@id="question-form"]/ul/li[14]/div[2]/div/div/li[2]/label/div[2]/div'
+            '//*[@class="list-block cards-list question-box"]/ul/li[14]/div[2]/div/div/li[2]/label/div[2]/div'
         ).click()
         time.sleep(2)
         driver.find_element_by_xpath(
-            '//*[@id="question-form"]/ul/li[15]/div[2]/div/div/li[2]/label/div[2]/div'
+            '//*[@class="list-block cards-list question-box"]/ul/li[15]/div[2]/div/div/li[2]/label/div[2]/div'
         ).click()
         time.sleep(2)
         driver.find_element_by_xpath(
-            '//*[@id="question-form"]/ul/li[16]/div[2]/div/div/li[1]/label/div[2]/div'
+            '//*[@class="list-block cards-list question-box"]/ul/li[16]/div[2]/div/div/li[1]/label/div[2]/div'
         ).click()
         time.sleep(2)
         driver.find_element_by_xpath(
-            '//*[@id="question-form"]/ul/li[17]/div[2]/div/div/li[2]/label/div[2]/div'
+            '//*[@class="list-block cards-list question-box"]/ul/li[17]/div[2]/div/div/li[2]/label/div[2]/div'
         ).click()
         time.sleep(2)
         #模拟点击签到
