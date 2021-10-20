@@ -11,6 +11,8 @@ def daka():
     dayOfWeek = datetime.today().weekday()
     dayOfMonth = date.today().day
     config_today = config["rules"]["default"]
+    print("生成每日的配置: ", config_today)
+
     if config["rules"]["custom"] != None:
         weekday = [
             "monday", "tuesday", "wednesday", "thursday", "friday", "saturday",
@@ -49,7 +51,7 @@ def daka():
         driver.switch_to.window(windows[-1])
         #输入地区
         pag = driver.find_element_by_xpath(
-            '//*[@id="question-form"]/ul/li[3]/div[2]/div/div/input')
+            '//*[@class="list-block cards-list question-box"]/ul/li[3]/div[2]/div/div/input')
         driver.execute_script("arguments[0].removeAttribute('readonly')", pag)
         driver.find_element_by_xpath(
             '//*[@id="question-form"]/ul/li[3]/div[2]/div/div/input'
