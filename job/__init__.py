@@ -1,4 +1,3 @@
-
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 import selenium.webdriver.support.expected_conditions as EC
@@ -17,8 +16,6 @@ def daka():
     dayOfWeek = datetime.today().weekday()
     dayOfMonth = date.today().day
     config_today = config["rules"]["default"]
-    print("生成每日的配置: ", config_today)
-
     if config["rules"]["custom"] != None:
         weekday = [
             "monday", "tuesday", "wednesday", "thursday", "friday", "saturday",
@@ -34,9 +31,9 @@ def daka():
     print("生成每日的配置: ", config_today)
     # 开始执行脚本
     chrome_options = webdriver.ChromeOptions()
-    # chrome_options.add_argument('--no-sandbox')
-    # chrome_options.add_argument('--headless')
-    # chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--disable-gpu')
     driver = webdriver.Chrome(chrome_options=chrome_options)
     driver.get(
         "http://ca.zucc.edu.cn/cas/login?service=http%3A%2F%2Fyqdj.zucc.edu.cn%2Ffeiyan_api%2Fh5%2Fhtml%2Fdaka%2Fdaka.html"
@@ -135,7 +132,7 @@ def daka():
         #模拟点击提交
         driver.find_element_by_partial_link_text('提交').click()
         time.sleep(2)
-        # TODO(Osrhu <1147246925@qq.com>): 缺乏验证签到成功的逻辑，提交之后再点击一次 提交成功 确认，没确认过就签到失败
+        # 验证签到成功
         if(is_visible(driver,'//*[@class="modal-buttons "]/span') ):
             driver.find_element_by_xpath(
                 '//*[@class="modal-buttons "]/span'
@@ -156,4 +153,3 @@ def is_visible(driver,locator, timeout=10):
         return True
     except TimeoutException:
         return False
-

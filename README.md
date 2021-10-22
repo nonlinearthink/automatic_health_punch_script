@@ -1,6 +1,6 @@
 # 浙大城市学院钉钉健康打卡脚本
 
-![](https://img.shields.io/badge/%E6%B5%99%E5%A4%A7%E5%9F%8E%E5%B8%82%E5%AD%A6%E9%99%A2%E9%92%89%E9%92%89%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1-v2.5-red)
+![](https://img.shields.io/badge/%E6%B5%99%E5%A4%A7%E5%9F%8E%E5%B8%82%E5%AD%A6%E9%99%A2%E9%92%89%E9%92%89%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1-v2.6-red)
 
 ## 历史版本
 
@@ -9,7 +9,7 @@
 |版本号|仓库|
 |-|-|
 |v1.0|[jonesnow/automatic_health_punch_script](https://gitee.com/jonesnow/automatic_health_punch_script)|
-|v2.5|[nonlinearthink/automatic_health_punch_script](https://github.com/nonlinearthink/automatic_health_punch_script)|
+|v2.6|[nonlinearthink/automatic_health_punch_script](https://github.com/nonlinearthink/automatic_health_punch_script)|
 
 ## 使用说明
 
@@ -22,19 +22,19 @@
 1. 下载镜像
 
     ```sh
-    docker pull nonlinearthink/automatic-health-punch-script:2.5
+    docker pull nonlinearthink/automatic-health-punch-script:2.6
     ```
 
-    如果下载的镜像出现了问题，可以自己制作：
-
-    ```sh
-    # 下载源代码仓库
-    git clone https://github.com/nonlinearthink/automatic_health_punch_script
-
-    # 打包镜像
-    docker build -t nonlinearthink/automatic-health-punch-script:2.5 .
-    ```
-
+    >如果下载的镜像出现了问题，可以**自己制作**：
+    >
+    >```sh
+    ># 下载源代码仓库
+    >git clone https://github.com/nonlinearthink/automatic_health_punch_script
+    >
+    ># 打包镜像
+    >docker build -t nonlinearthink/automatic-health-punch-script:2.6 .
+    >```
+    >
     > 自制脚本可能需要科学上网，不然安装chrome的时候获取谷歌的验证服务可能会失败。
 
 2. 创建一个目录
@@ -55,13 +55,13 @@
     Linux & MacOS
 
     ```sh
-    docker run --name automatic-health-punch-script -e TZ=Asia/Shanghai -v $(pwd)/application.yml:/application.yml -ti -d nonlinearthink/automatic-health-punch-script:2.5
+    docker run --name automatic-health-punch-script -e TZ=Asia/Shanghai -v $(pwd)/application.yml:/application.yml -ti -d nonlinearthink/automatic-health-punch-script:2.6
     ```
 
     Windows
 
     ```powershell
-    docker run --name automatic-health-punch-script -e TZ=Asia/Shanghai -v %cd%\application.yml:/application.yml -ti -d nonlinearthink/automatic-health-punch-script:2.5
+    docker run --name automatic-health-punch-script -e TZ=Asia/Shanghai -v %cd%\application.yml:/application.yml -ti -d nonlinearthink/automatic-health-punch-script:2.6
     ```
 
 5. 动态修改配置

@@ -3,33 +3,44 @@ username: xxx
 # 密码
 password: xxx
 # 每日打卡时间，格式 HH:mm，更改之后重新运行容器
-schedule: 08:00
+schedule: 09:00
 # 打卡规则
 rules:
   # 默认规则
   default:
-    location: 浙江省 杭州市 余杭区
+    # location 只能填 '省 市 区'，目的地除了 '省 市 区' 外，还可以填 '校内 校内 校内'
+    location: 浙江省 杭州市 拱墅区
+    destination: 校内 校内 校内
   # 定制规则，日期定制会覆盖星期定制
   custom:
     # 按星期定制
     week:
       # monday:
         # location: 浙江省 杭州市 拱墅区
+        # destination: 校内 校内 校内
       # tuesday:
         # location: 浙江省 杭州市 拱墅区
+        # destination: 校内 校内 校内
       # wednesday:
         # location: 浙江省 杭州市 拱墅区
+        # destination: 校内 校内 校内
       # thursday:
         # location: 浙江省 杭州市 拱墅区
+        # destination: 校内 校内 校内
       # friday:
         # location: 浙江省 杭州市 拱墅区
+        # destination: 校内 校内 校内
       saturday:
-        location: 校内 校内 校内
+        location: 浙江省 杭州市 拱墅区
+        destination: 校内 校内 校内
       sunday:
-        location: 校内 校内 校内
+        location: 浙江省 杭州市 拱墅区
+        destination: 校内 校内 校内
     # 按日期制定
     month:
       # 1:
-        # location: 浙江省 杭州市 萧山区
+        # location: 浙江省 杭州市 拱墅区
+        # destination: 校内 校内 校内
       # 31:
-        # location: 浙江省 杭州市 萧山区
+        # location: 浙江省 杭州市 拱墅区
+        # destination: 校内 校内 校内
